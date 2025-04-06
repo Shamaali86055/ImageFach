@@ -10,7 +10,7 @@ smg1.lang = "hi-IN";
 
 function btn() {
   let pass = document.querySelector(".as").value;
-  if (pass === "shama") {
+  if (pass === "shama@0000") {
     a.style.display = "none";
     b.style.display = "grid";
     speechSynthesis.speak(smg1);
@@ -21,7 +21,8 @@ function btn() {
 }
 
 
-// API se data fetch karo
+
+
 fetch("https://api.github.com/repos/shamaali86055/PicAl/contents/")
         .then(res => res.json())
         .then(data => {
@@ -31,8 +32,6 @@ fetch("https://api.github.com/repos/shamaali86055/PicAl/contents/")
                 .join('');
         })
         .catch(err => console.log("Error:", err));
-        
-        
         
         
   function toggleFullScreen(img) {
@@ -47,16 +46,5 @@ fetch("https://api.github.com/repos/shamaali86055/PicAl/contents/")
     } else if (img.msRequestFullscreen) {
       img.msRequestFullscreen();
     }
-  } else {
-    // Agar pehle se hi fullscreen hai to exit karo
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    } else if (document.mozCancelFullScreen) {
-      document.mozCancelFullScreen();
-    } else if (document.webkitExitFullscreen) {
-      document.webkitExitFullscreen();
-    } else if (document.msExitFullscreen) {
-      document.msExitFullscreen();
-    }
-  }
+  } 
 }
